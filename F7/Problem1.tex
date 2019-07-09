@@ -1,0 +1,57 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{booktabs} % For formal tables
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+\begin{document}
+% @author : Himanshu Kohli
+% Student ID: 40070839
+% Date: 22 Feb 2019
+\noindent
+\large\textbf{Problem 1} \hfill \textbf{Himanshu Kohli} \\
+\normalsize SOEN 6011 \hfill \textbf{40070839} \\
+Prof. Pankaj Kamthan \hfill Due Date: July 05, 2019 \\
+
+
+\section{Function 7 :  $a^{b^{x}}$}
+
+The function $a^{b^{x}}$ is an exponential function where a and b are real constants and x is a real variable. A normal exponential function is stagnant at first but then increases sharply as the value of the variable increases. \\
+
+The growth or decay of the function depends upon the sign of the exponent so if the sign is positive the function increases and if the sign is negative the function decreases.\\
+
+for e.g. if x is positive the function : f(x) = $a^{b^{x}}$ \\
+
+and if x is negative the function : f(x) = $\frac{1}{a{b^{x}}}$ \\
+
+The domain and co-domain of the function \\
+
+If we differentiate the function with respect to x
+
+\begin{equation} \label{eq. 1}
+    \begin{split}
+        \frac{d}{dx}  a^{b^{x}} & = a^{b^{x}} \log{a} * b^x \log{b}
+    \end{split}
+\end{equation} 
+\newline
+From equation \ref{eq. 1} we can see if the value of either a or b is equal to 1 the $\log{b}$ or $\log{a}$ equals to zero because $\log{1} = 0$ which means the exponential function is constant because the derivative is zero. \\
+For a positive value of b and a the function $a^{b^{x}}$ is monotonically increasing \\
+For a negative value of b and positive value of a the function $a^{b^{x}}$ is monotonically increasing in negative side i.e. (negative x axis)  \\
+For a positive or negative value of b and negative value of a the function $a^{b^{x}}$ is monotonically decreasing  \\
+
+So the value of the function f(x) = $a^{b^{x}}$ actually depends upon the $b^x$  and how the slope of the function will be rise or decay. \newline
+Properties : 
+\begin{enumerate}
+    \item The domain is all real numbers
+    \item The graph is continuous and smooth
+    \item The graph can be asymptotic or increase without bounds
+    \item The graph is monotonically increasing or decreasing
+\end{enumerate}
+
+\end{document}
