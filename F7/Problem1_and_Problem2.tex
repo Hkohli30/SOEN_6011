@@ -1,0 +1,100 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{booktabs} % For formal tables
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+\begin{document}
+% @author : Himanshu Kohli
+% Student ID: 40070839
+% Date: 22 Feb 2019
+\noindent
+\large\textbf{Problem 1} \hfill \textbf{Himanshu Kohli} \\
+\normalsize SOEN 6011 \hfill \textbf{40070839} \\
+Prof. Pankaj Kamthan \hfill Due Date: July 05, 2019 \\
+
+
+\section{Function 7 :  $a^{b^{x}}$}
+
+The function $a^{b^{x}}$ is an exponential function where a and b are real constants and x is a real variable. A normal exponential function is stagnant at first but then increases sharply as the value of the variable increases. \\
+
+The growth or decay of the function depends upon the sign of the exponent so if the sign is positive the function increases and if the sign is negative the function decreases.\\
+
+for e.g. if x is positive the function : f(x) = $a^{b^{x}}$ \\
+
+and if x is negative the function : f(x) = $\frac{1}{a^{b^{x}}}$ \\
+
+The domain and co-domain of the function \\
+
+If we differentiate the function with respect to x
+
+\begin{equation} \label{eq. 1}
+    \begin{split}
+        \frac{d}{dx}  a^{b^{x}} & = a^{b^{x}} \log{a} * b^x \log{b}
+    \end{split}
+\end{equation} 
+\newline
+From equation \ref{eq. 1} we can see if the value of either a or b is equal to 1 the $\log{b}$ or $\log{a}$ equals to zero because $\log{1} = 0$ which means the exponential function is constant because the derivative is zero. \\
+For a positive value of b and a the function $a^{b^{x}}$ is monotonically increasing \\
+For a negative value of b and positive value of a the function $a^{b^{x}}$ is monotonically increasing in negative side i.e. (negative x axis)  \\
+For a positive or negative value of b and negative value of a the function $a^{b^{x}}$ is monotonically decreasing  \\
+
+So the value of the function f(x) = $a^{b^{x}}$ actually depends upon the $b^x$  and how the slope of the function will be rise or decay. \newline
+Properties : 
+\begin{enumerate}
+    \item The domain is all real numbers
+    \item The graph is continuous and smooth
+    \item The graph can be asymptotic or increase without bounds
+    \item The graph is monotonically increasing or decreasing
+\end{enumerate}
+
+\newpage
+
+\section{Requirements Specifications}
+
+\subsection{Introduction}
+The implementation of well designed and well defined calculator function specifically $a^{b^{x}}$  falls in the range of exponential functions which gamuts to alpine values quickly. And within the function lies certain requirements which are to be fulfilled in order to make the entire system tangible.
+
+\subsection{Requirements} 
+\begin{enumerate}
+    \item \textbf{Title :} Verifying input \newline 
+    \textbf{Description : } The system should validate the of the inputs by the user where the variables a and b should be real constant and the x must be a real variable whereas any other values rather than real numbers should result in an error. \newline
+    \textbf{Requirement Type : } Functional
+    
+    \item \textbf{Title :} Infinity representation \newline 
+    \textbf{Description : } The system should have a calculation for infinity i.e. for specifically large numbers it should print the result as infinite. \newline
+    \textbf{Requirement Type : } Functional, System
+    
+    \item \textbf{Title :} Input Domain \newline 
+    \textbf{Description : } The system should perform operation on any numbers which falls under the domain of real numbers. \newline
+    \textbf{Requirement Type : } Functional, Interface
+    
+    \item \textbf{Title :} Positive large number handling \newline 
+    \textbf{Description : } The largest value java systems can handle is max double value of 1.8 * $10^{308}$ so if the function evaluation reaches max value it shall be considered as positive infinity. \newline
+    \textbf{Requirement Type : } Functional, System
+    
+    \item \textbf{Title :} Negative large number handling \newline 
+    \textbf{Description : } The lowest value java systems can handle is a min double value of 4.9 * $10^{-324}$ so if the function evaluation reach min value it shall be considered as negative infinity. \newline
+    \textbf{Requirement Type : } Functional, System
+    
+    \item \textbf{Title :} Rounding input value \newline 
+    \textbf{Description : } The system shall be able of handle decimal point numbers with a rounding of up to 10 decimal places for the inputs. \newline
+    \textbf{Requirement Type : } Functional, Interface
+    
+    \item \textbf{Title :} Valid input and output \newline
+    \textbf{Description : } The system shall take the input from command line and for a valid input it should print the valid result to the command line.
+    \newline
+    \textbf{Requirement Type : } Functional
+    
+    \item \textbf{Title :} Result Dependency on 'a' value \newline 
+    \textbf{Description : } The function shall only print negative results when the value of a is negative and positive results when a is positive.
+    
+\end{enumerate}
+
+\end{document}
